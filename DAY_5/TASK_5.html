@@ -1,0 +1,62 @@
+<!-- 5. Create a form to take user data like name and email. 
+Now once the user have filled his data and clicked on submit button
+get all the data filled in the form and put inside a object and store that object in global userArray[]. 
+Below your form create a div which display all the user names stored in your userArray[]. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="text" placeholder="Enter Your Name" id="name" required><br><br>
+        <input type="email" placeholder="Enter Your Mail Id" id="mail" required><br><br>
+        <input type="password" placeholder="enter Your Password" id="pass" required><br><br>
+        <input type="submit" value="submit">
+    </form>
+    <div id="div">
+        <h1>Registered User Names</h1>
+        <h3>Empty</h3>
+    </div>
+</body>
+    <script>
+        //var form=document.getElementById("form")
+
+        let array=[]
+        console.log(array);
+        var form=document.forms
+
+        var div=document.getElementById("div")
+            
+
+
+        form[0].addEventListener("submit",(event)=>{
+            event.preventDefault();
+            let name=event.target[0].value;
+            let mail=event.target[1].value;
+            let pass=event.target[2].value;
+            
+            const object={name,mail,pass}
+            console.log(object);
+
+            array.push(object)
+
+            data()
+        })
+            
+        function data(){
+            div.innerHTML="<h1>Registered User Names</h1>"
+            array.map((val)=>{
+                var h3=document.createElement("h3")
+                h3.textContent=val.name
+                div.appendChild(h3)
+            })
+        }
+            
+        
+        
+    </script>
+</html>

@@ -1,0 +1,45 @@
+<!-- Create an array with 3 userObjects: name, city , age. put those in an array.
+    Now in HTML page. Create an empty div tag: <div></div>
+    and below this div tag create an button.
+    Now when the user clicks on that button. The names present in all those 3 obj should get printed with <h1>
+ 
+    after clicking your div should look like this:
+    <div>
+        <h1>name<h1>
+        <h1>name<h1>
+        <h1>name<h1>
+    </div> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div"></div>
+    <button id="butt">Get Names</button>
+</body>
+    <script>
+        var array=[
+         { name: "madhu", city: "hyderabad", age: 23 },
+         { name: "ram", city: "pune", age: 25 },
+         { name: "sai", city: "delhi", age: 24 }
+        ]
+
+        var button=document.getElementById("butt")
+
+        button.addEventListener("click",()=>{
+            var div=document.getElementById("div")
+            array.map((value)=>{
+                var head=document.createElement("h1")
+                head.innerText=value.name
+                div.appendChild(head)
+            })
+        })
+
+    </script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        // Calculator programme. a. Take input from user which operation he 
+        // wants to perform. ("sum", "sub", "mul", "div") b. based on his input 
+        // take the next 2 numbers. c. to perform the operation use arrow function. 
+        // (for sum operation create a sum arrow function and pass 2 values to 
+        // it form your main function and return the sum to your 
+        // main function. and then console log it.)
+       
+        var operation = prompt("Enter which operation you want to perform like 'sum', 'sub', 'mul', 'div'");
+        var input1 = +prompt("Enter first number");
+        var input2 = +prompt("Enter second number");
+
+        let sum = (input1, input2) => input1 + input2;
+        let sub = (input1, input2) => input1 - input2;
+        let mul = (input1, input2) => input1 * input2;
+        let div = (input1, input2) => input1 / input2;
+
+        let answer;
+
+        switch (operation) {
+            case 'sum':
+                answer = sum(input1, input2);
+                break;
+            case 'sub':
+                answer = sub(input1, input2);
+                break;
+            case 'mul':
+                answer = mul(input1, input2);
+                break;
+            case 'div':
+                answer = div(input1, input2);
+                break;
+            default:
+                console.log("Invalid operation!");
+                break;
+        }
+        alert(`the result is ${answer}`)
+        console.log("Result is", answer);
+    </script>
+</body>
+</html>
